@@ -42,6 +42,19 @@
       </li>
       <li class="treeview">
         <a href="#">
+          <i class="fa fa-server"></i>
+          <span>Leagues</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="../leagues"><i class="fa fa-tasks"></i> List Leagues</a></li>
+          <li><a href="../leagues/create"><i class="fa fa-thumb-tack"></i> Create A League</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
           <i class="fa fa-calendar-check-o"></i>
           <span>Matches</span>
           <span class="pull-right-container">

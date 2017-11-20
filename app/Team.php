@@ -9,4 +9,9 @@ class Team extends Model
     protected $table = 'teams';
 
     protected $fillable = [];
+
+    public function game()
+    {
+        return $this->hasOne('App\Game', 'id', 'gameType');
+    }
 }

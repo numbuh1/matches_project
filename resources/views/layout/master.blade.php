@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="../css/sweetalert2.min.css">
   <!-- Popup -->
   <link rel="stylesheet" href="../css/popup.css">
+  <!-- Global -->
+  <link rel="stylesheet" href="../css/global.css">
 
   @yield('css')
 
@@ -80,6 +82,8 @@
 <script src="../vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="../vendor/fastclick/lib/fastclick.js"></script>
+<!-- Date Picker -->
+<script src="../vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <!-- Sweet Alert -->
 <script src="../js/sweetalert2.min.js"></script>
 <!-- AdminLTE App -->

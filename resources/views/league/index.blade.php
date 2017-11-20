@@ -3,7 +3,7 @@
 @section('content')
 	<section class="content-header">
 	  <h1>
-	    Teams 
+	    League 
 	    <small>Teamsssssss</small>
 	  </h1>
 	</section>
@@ -16,22 +16,14 @@
 					<table id="tblTeam" class="table table-bordered table-hover" role="grid">
 						<thead>
 							<tr>
-								<th>Team Name</th>
+								<th>League Name</th>
 								<th>Country</th>
 								<th>Game</th>
+								<th>Date Start</th>
+								<th>Date End</th>
 								<th>Action</th>
 							</tr>
 						</thead>
-						<tbody>
-							@foreach($team as $key => $val)
-								<tr>
-									<td><span class="game-icon" style="background-image: url('{{$val->logo}}');"></span> {{ $val->name }}</td>
-									<td><span class="flag-icon flag-icon-{{ $val->countryId }}"></span> {{ $val->country }}</td>
-									<td><span class="game-icon" style="background-image: url('{{$val->game->logo}}');"></span> {{ $val->game->name }}</td>
-									<td></td>
-								</tr>
-	                        @endforeach
-						</tbody>
 					</table>
 				</div>
 			</div>

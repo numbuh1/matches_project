@@ -22,3 +22,5 @@ Route::resource('shop', 'ShopController');
 Route::get('product/{id}', 'ShopController@getProduct');
 
 Route::resource('teams', 'TeamController');
+
+Route::resource('leagues', 'LeagueController');

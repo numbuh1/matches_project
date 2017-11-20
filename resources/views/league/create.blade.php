@@ -3,7 +3,7 @@
 @section('content')
 	<section class="content-header">
 	  <h1>
-	    Create A Team
+	    Create A League
 	    <small>Teamsssssss</small>
 	  </h1>
 	</section>
@@ -16,12 +16,12 @@
 					
 		            <div class="box-body">
 		            	<div class="form-group col-md-6">
-		                	<label for="txtName">Team Name</label>
-		                	<input type="text" name="name" class="form-control" id="txtName" placeholder="Enter Team Name">
+		                	<label for="txtName">League Name</label>
+		                	<input type="text" name="name" class="form-control" id="txtName" placeholder="Enter League Name">
 		                </div>
 		                <div class="form-group col-md-6">
-		                	<label for="txtName">Short Name</label>
-		                	<input type="text" name="shortName" class="form-control" id="txtName" placeholder="Enter Short Name">
+		                	<label for="txtLogo">Logo</label>
+		                	<input type="text" name="logo" class="form-control" id="txtLogo" placeholder="Enter Logo Image Link">
 		                </div>
 		                <div class="form-group col-md-6">
 		                	<label for="cboGame">Game</label>
@@ -33,14 +33,28 @@
 		                	</select>
 		                </div>
 		                <div class="form-group col-md-6">
-		                	<label for="txtName">Logo</label>
-		                	<input type="text" name="logo" class="form-control" id="txtLogo" placeholder="Enter Image Link">
+		                	<label for="txtLocation">Location</label>
+		                	<input type="text" name="location" class="form-control" id="txtLocation" placeholder="Enter Location">
 		                </div>
 		                <div class="form-group col-md-6">
 		                	<label for="cboCountry">Team Country</label>
 		                	<br>
 		                	<input type="text" class="form-control" name="country" id="cboCountry" onchange="setCountry()">
 		                	<input type="hidden" name="countryId" id="countryId">
+		                </div>
+		                <br>
+		                <div class="form-group col-md-6">
+		                	<label for="txtDescription">Description</label>
+		                	<textarea name="description" class="form-control" id="txtDescription" placeholder="Enter Description" rows="4"></textarea>
+		                </div>
+		                <div class="form-group col-md-6"></div>
+		                <div class="form-group col-md-3">
+		                	<label for="txtDateStart">Start Date</label>
+		                	<input type="text" class="datepicker form-control" name="dateStart" id="txtDateStart">
+		                </div>
+		                <div class="form-group col-md-3">
+		                	<label for="txtDateEnd">End Date</label>
+		                	<input type="text" class="datepicker form-control" name="dateEnd" id="txtDateEnd">
 		                </div>
 		            </div>
 		            <div class="box-footer">
@@ -71,7 +85,9 @@
 	<script src="../vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 	<script>
 		$("#cboCountry").countrySelect();
-		$("#tblTeam").DataTable()
+		$(".datepicker").datepicker({
+			autoclose: true
+		});
 
 		$(document).ready(function () {
 			setCountry();
