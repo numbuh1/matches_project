@@ -17,14 +17,15 @@ class CreateLeagueTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('gameType');
-            $table->string('description');
+            $table->text('description')->nullable();
             $table->string('country');
-            $table->string('location');
-            $table->string('logo');
-            $table->string('image');
-            $table->string('banner');
-            $table->date('dateStart');
-            $table->date('dateEnd');
+            $table->string('countryId');
+            $table->string('location')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('image')->nullable();
+            $table->string('banner')->nullable();
+            $table->date('dateStart')->nullable();
+            $table->date('dateEnd')->nullable();
             $table->timestamps();
         });
     }

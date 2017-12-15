@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user/list');
-});
+Route::get('/', 'IndexController@index');
+
+Route::get('/build', 'IndexController@build');
 
 Route::resource('quest', 'QuestController');
 
@@ -24,3 +24,5 @@ Route::get('product/{id}', 'ShopController@getProduct');
 Route::resource('teams', 'TeamController');
 
 Route::resource('leagues', 'LeagueController');
+
+Route::resource('matches', 'MatchController');

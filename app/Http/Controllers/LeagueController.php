@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\League;
 use App\Game;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class LeagueController extends Controller
 {
@@ -17,7 +18,7 @@ class LeagueController extends Controller
     {
         $leagues = League::all();
         $games = Game::all();
-        return view('league.index')
+        return view('admin.league.index')
             ->with('league', $leagues)
             ->with('game', $games);
     }
@@ -30,7 +31,7 @@ class LeagueController extends Controller
     public function create()
     {
         $games = Game::all();
-        return view('league.create')
+        return view('admin.league.create')
             ->with('game', $games);
     }
 
@@ -42,7 +43,21 @@ class LeagueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $league = new League();
+        
+        $league->name = $request->input('name');
+        $league->gameType = $request->input('game');
+        $league->logo = $request->input('logo');
+        $league->country = $request->input('country');
+        $league->countryId = $request->input('countryId');
+        $league->description = $request->input('description');
+        $league->location = $request->input('location');
+        $league->dateStart = Carbon::parse($request->input('dateStart'));
+        $league->dateEnd = Carbon::parse($request->input('dateEnd'));
+
+        if ($league->save()) {
+            return redirect('/leagues');
+        }
     }
 
     /**

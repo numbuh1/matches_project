@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Match;
+use App\Game;
+use App\Team;
+use App\League;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class MatchController extends Controller
 {
@@ -14,7 +18,9 @@ class MatchController extends Controller
      */
     public function index()
     {
-        //
+        $matches = Match::all();
+        return view('admin.match.index')
+            ->with('match', $matches);
     }
 
     /**
@@ -24,7 +30,13 @@ class MatchController extends Controller
      */
     public function create()
     {
-        //
+        $games = Game::all();
+        $teams = Team::all();
+        $leagues = League::all();
+        return view('admin.match.create')
+            ->with('game', $games)
+            ->with('team', $teams)
+            ->with('league', $leagues);
     }
 
     /**
@@ -35,7 +47,23 @@ class MatchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $match = new match();
+        
+        $match->leagueId = $request->input('league');
+        $match->gameType = $request->input('game');
+        $match->team1Id = $request->input('team1');
+        $match->team2Id = $request->input('team2');
+        $match->formatType = $request->input('format');
+
+        $dt = Carbon::parse($request->input('date'));
+        $dt->hour = explode(":", $request->input('time'))[0];
+        $dt->minute = explode(":", $request->input('time'))[1];
+
+        $match->timeStart = $dt;
+
+        if ($match->save()) {
+            return redirect('/matches');
+        }
     }
 
     /**

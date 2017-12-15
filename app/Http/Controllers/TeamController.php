@@ -17,7 +17,7 @@ class TeamController extends Controller
     {
         $teams = Team::all();
         $games = Game::all();
-        return view('team.index')
+        return view('admin.team.index')
             ->with('team', $teams)
             ->with('game', $games);
     }
@@ -31,7 +31,7 @@ class TeamController extends Controller
     {
         //
         $games = Game::all();
-        return view('team.create')
+        return view('admin.team.create')
             ->with('game', $games);
     }
 
