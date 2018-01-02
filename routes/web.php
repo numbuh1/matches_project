@@ -15,6 +15,8 @@ Route::get('/', 'IndexController@index');
 
 Route::get('/build', 'IndexController@build');
 
+Route::get('/posts', 'IndexController@posts');
+
 Route::resource('quest', 'QuestController');
 
 Route::resource('shop', 'ShopController');

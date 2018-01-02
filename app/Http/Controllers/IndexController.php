@@ -28,4 +28,9 @@ class IndexController extends Controller
     {
         return view('user.build');
     }
+
+    public function posts()
+    {
+        return view('user.posts');
+    }
 }
